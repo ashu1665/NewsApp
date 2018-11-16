@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>NEWS APP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">  
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" sizes="192x192" href="/icon.png">
+    <meta name="theme-color" content="#ffffff" />
+   <style>
+   a:link, a:visited {
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+}
+
+</style>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+  <header>
+     <h1>NEWS APP</h1>
+     <select  id="option" onchange="display()"></select>
+    </header>
+    </div>
+    <div class="container">
+  <main id='main'></main>
+  </div>
+  <script src="check.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () =>
+    navigator.serviceWorker.register('sw.js')
+      .then(registration => console.log('Service Worker registered'))
+      .catch(err => 'SW registration failed'));
+}
+
+</script>
+</body>
+
+</html>
